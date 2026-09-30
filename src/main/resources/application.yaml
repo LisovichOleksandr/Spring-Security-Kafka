@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: start
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tomiddle
+    username: myuser
+    password: mypass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update   # create, create-drop, validate, update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+
+#  БД взяв з стабілізатор конейнера
+    #  postgres:
+    #    image: postgres:15
+    #    restart: always
+    #    environment:
+    #      POSTGRES_DB: mydb
+    #      POSTGRES_USER: myuser
+    #      POSTGRES_PASSWORD: mypass
+    #    ports:
+    #      - "5432:5432"
+    #    volumes:
+    #      - pgdata:/var/lib/postgresql/data
+
+
+#  stabilisator-postgres-1
+#  docker exec -it stabilisator-postgres-1 psql -U myuser -d postgres
+#  \l
+#  \c tomiddle
+#  \c postgres
