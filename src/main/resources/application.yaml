@@ -13,8 +13,12 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
-
-
+  kafka:
+    bootstrap-servers: localhost:9092
+  logging:
+    level:
+      org.springframework.kafka: DEBUG
+      org.springframework.boot.autoconfigure.kafka: DEBUG
 #  БД взяв з стабілізатор конейнера
     #  postgres:
     #    image: postgres:15
